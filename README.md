@@ -5,9 +5,31 @@ This is an HTML5 Canvas port of the "Irregular Grid Painter" (IGP) application b
 
 If you would like to easily run a local instance, run the following python command in the canvas-igp root directory (replace [port] with your desired port number):
 
-python -m SimpleHTTPServer [port]
+python -m http.server [port]
 
 Then point your web browser at http://localhost:[port]
 
-Alternately you can access the latest version on my website at http://andrewganim.com/canvas-igp
+## Great how do I get started
+
+Obviously its a docker image so you need docker, if you don't know what that is you need to look into that first.
+
+### docker
+
+```bash
+docker create \
+  --name=canvas_igp \
+  --restart unless-stopped \
+  n4zmz/canvas_igp
+```
+
+### docker-compose
+
+```yaml
+---
+version: '3.4'
+services:
+  canvas_igp:
+    image: n4zmz/canvas_igp
+    container_name: canvas_igp
+```
 
