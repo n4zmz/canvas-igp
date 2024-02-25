@@ -13,13 +13,14 @@ Then point your web browser at http://localhost:[port]
 
 Obviously its a docker image so you need docker, if you don't know what that is you need to look into that first.
 
-### docker
-
+### docker build
 ```bash
-docker create \
-  --name=canvas_igp \
-  --restart unless-stopped \
-  n4zmz/canvas_igp
+docker build -t canvas_igp .
+```
+
+### docker run
+```bash
+docker run -dp 8000:8000 canvas_igp
 ```
 
 ### docker-compose
